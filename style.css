@@ -1,0 +1,36 @@
+body {
+    background: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-inscription {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 500px;
+}
+
+.role {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.form-control, .form-select {
+    margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+    width: 100%;
+}
+
+.fond{
+    background-image: url('../images/Fond.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
