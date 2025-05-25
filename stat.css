@@ -1,0 +1,7 @@
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.stat-value { font-size: 2.2rem; font-weight: 700; }
+.stat-label { font-size: 1rem; color: #666; }
+.btn-detail { font-size: 0.95rem; padding: 0.3rem 0.8rem; }
+@media (max-width: 767px) {
+    .card { min-height: unset; }
+}
