@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int NOT NULL AUTO_INCREMENT,
   `id_utilisateur` int NOT NULL,
-  `niveau` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `niveau` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_admin`),
   KEY `id_utilisateur` (`id_utilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
