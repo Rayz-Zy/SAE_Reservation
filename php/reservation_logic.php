@@ -13,7 +13,7 @@ function afficherTableauReservations($reservations, $avecActions = false, $role 
                     <th>Commentaire</th>
                     <th>État</th>';
         if ($avecActions && $role === 'admin') {
-            echo '<th>Actions</th>';
+            echo '<th>Action</th>';
         }
         echo '</tr></thead><tbody>';
         foreach ($reservations as $row) {
@@ -24,16 +24,17 @@ function afficherTableauReservations($reservations, $avecActions = false, $role 
                     <td>{$row["heure_acces"]}</td>
                     <td>{$row["heure_rendu"]}</td>
                     <td>{$row["commentaire"]}</td>
-                    <td><span class='badge ".($row["etat"]=='en attente'?'bg-warning text-dark':'bg-success')."'>".ucfirst($row["etat"])."</span></td>";
+                    <td><span class='badge "
+                        .($row["etat"]=='en attente'?'bg-warning text-dark':
+                          ($row["etat"]=='valider'?'bg-success':'bg-danger'))
+                        ."'>".ucfirst($row["etat"])."</span></td>";
             if ($avecActions && $role === 'admin') {
-                echo "<td>
-                        <form method='POST' action='traitement_etat_reservation.php' style='display:inline;'>
-                            <input type='hidden' name='id_reservation' value='{$row["id_reservation"]}'>
-                            <button type='submit' name='action' value='valider' class='btn btn-success btn-sm me-1'>Valider</button>
-                            <button type='submit' name='action' value='refuser' class='btn btn-danger btn-sm'>Refuser</button>
-                        </form>
-                      </td>";
-            }
+    echo "<td>
+            <a href='modifier_reservation.php?id_reservation={$row["id_reservation"]}' class='btn btn-warning btn-sm'>
+                Modifier
+            </a>
+          </td>";
+}
             echo "</tr>";
         }
         echo '</tbody></table></div>';
