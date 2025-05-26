@@ -31,7 +31,7 @@
         <select id="role" name="role" class="form-select" required>
             <option value="">- Aucun -</option>
             <option value="etudiant">Étudiant</option>
-            <option value="enseignant">Enseignant</option>
+            <option value="professeur">Professeur</option>
             <option value="admin">Administrateur</option>
             <option value="agent">Agent</option>
         </select>
