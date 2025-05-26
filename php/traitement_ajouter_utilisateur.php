@@ -41,7 +41,7 @@ if ($role === 'etudiant') {
         ":TD" => $TD,
         ":TP" => $TP,
     ]);
-} elseif ($role === 'enseignant') {
+} elseif ($role === 'professeur') {
     $diplome = $_POST['diplome'];
     $qualif = $_POST['qualif'];
     $stmt = $pdo->prepare("INSERT INTO professeur (id_utilisateur, diplome, qualification) VALUES (:id_utilisateur, :diplome, :qualification)");
