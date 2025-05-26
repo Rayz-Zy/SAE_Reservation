@@ -8,7 +8,7 @@ $stmt = $pdo->prepare("SELECT r.*, u.pseudo FROM reservation r JOIN utilisateur 
 $stmt->execute();
 $reservationsAttente = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare("SELECT r.*, u.pseudo FROM reservation r JOIN utilisateur u ON r.id_user = u.id_utilisateur WHERE r.etat = 'valide'");
+$stmt = $pdo->prepare("SELECT r.*, u.pseudo FROM reservation r JOIN utilisateur u ON r.id_user = u.id_utilisateur WHERE r.etat = 'valider'");
 $stmt->execute();
 $reservationsValide = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -74,7 +74,7 @@ $reservationsValide = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div>
             <h2 class="h4 text-success mb-3"><i class="bi bi-check-circle"></i> Réservations validées</h2>
-            <?php afficherTableauReservations($reservationsValide, false, $role); ?>
+            <?php afficherTableauReservations($reservationsValide, true, $role); ?>
         </div>
     </div>
 
