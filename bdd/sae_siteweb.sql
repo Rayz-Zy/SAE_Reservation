@@ -310,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `pseudo`, `email`, `mot_de_passe`, `adresse`, `telephone`, `role`, `etat`) VALUES
 (21, 'agent', 'agent', 'agent', 'agent@gmail.com', '$2y$10$YwP/JAstiRsjcAnetSDqtOie1003XFbaIRuzJ6USqN98WD0vUJxD6', 'adresse', 123456789, 'agent', 'valider'),
-(20, 'Tir', 'Fouard', 'professeur', 'tir@gmail.com', '$2y$10$L.p8qB9qnf2BB2KWTcp9i.eyNW3AU6voqdDLenija2pWIBDp.IF.2', 'adresse', 123456789, 'enseignant', 'valider'),
+(20, 'Tir', 'Fouard', 'professeur', 'tir@gmail.com', '$2y$10$L.p8qB9qnf2BB2KWTcp9i.eyNW3AU6voqdDLenija2pWIBDp.IF.2', 'adresse', 123456789, 'professeur', 'valider'),
 (19, 'etudiant', 'etudiant', 'etudiant', 'etudiant@gmail.com', '$2y$10$p7m..eXWt8DKEikGcMpLM.us1bVKfvxk8XeTz6Wt6LOZGikqCOh8a', 'adresse', 123456789, 'etudiant', 'valider'),
 (18, 'admin', 'admin', 'admin', 'admin@gmail.com', '$2y$10$nFnaah4syFX0wAQwBxka2uClrA18BAqkQiY6lfpRecqfaA8X1CZzW', 'adresse', 123456789, 'admin', 'valider');
 
