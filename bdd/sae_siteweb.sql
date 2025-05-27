@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 25 mai 2025 à 13:27
--- Version du serveur : 8.2.0
--- Version de PHP : 8.2.13
+-- Généré le : lun. 26 mai 2025 à 08:28
+-- Version du serveur : 9.1.0
+-- Version de PHP : 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int NOT NULL AUTO_INCREMENT,
   `id_utilisateur` int NOT NULL,
-  `niveau` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `niveau` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_admin`),
   KEY `id_utilisateur` (`id_utilisateur`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -114,31 +114,31 @@ CREATE TABLE IF NOT EXISTS `materiel` (
 --
 
 INSERT INTO `materiel` (`id_materiel`, `ref_materiel`, `nom`, `date_achat`, `etat`, `quantite`, `descriptif`, `image_url`, `categorie`) VALUES
-(2, '1', 'tre', '0000-00-00', 'bon', '5', 'flemme', 'images/P1018463', 'trepied'),
-(3, '1', 'cam2', '0000-00-00', 'bon', '5', 'flemme', 'images/IMG_0025', 'camera'),
-(4, '1', 'micro', '0000-00-00', 'bon', '5', 'flemme', 'images/IMG_0019', 'micro'),
+(2, '1', 'tre', '0000-00-00', 'bon', '5', 'flemme', '../images/P1018463', 'trepied'),
+(3, '1', 'cam2', '0000-00-00', 'bon', '5', 'flemme', '../images/IMG_0025', 'camera'),
+(4, '1', 'micro', '0000-00-00', 'bon', '5', 'flemme', '../images/IMG_0019', 'micro'),
 (45, '84512', 'drone', '2025-05-03', 'neuf', '3', 'sf', '../images/P1018443.JPG', 'camera'),
-(123, 'h4', 'camera', '0000-00-00', 'bon', '5', 'rien a dire', 'images/20230505_105927.jpg', 'camera'),
-(124, 'cam01', 'Caméra Sony', '2023-05-01', 'bon', '3', 'Caméra HD', 'images/20230505_100306.jpg', 'camera'),
-(125, 'cam02', 'Caméra Canon', '2023-05-02', 'bon', '2', 'Caméra 4K', 'images/20230505_100614.jpg', 'camera'),
-(126, 'cam03', 'Caméra Panasonic', '2023-05-03', 'bon', '4', 'Caméra compacte', 'images/20230505_100647.jpg', 'camera'),
-(127, 'cam04', 'Caméra GoPro', '2023-05-04', 'bon', '5', 'Caméra sport', 'images/20230505_100649.jpg', 'camera'),
-(128, 'mic01', 'Micro Rode', '2023-05-05', 'bon', '6', 'Microphone studio', 'images/20230505_100918.jpg', 'micro'),
-(129, 'mic02', 'Micro Shure', '2023-05-06', 'bon', '3', 'Micro dynamique', 'images/20230505_101201.jpg', 'micro'),
-(130, 'mic03', 'Micro AKG', '2023-05-07', 'bon', '2', 'Micro chant', 'images/20230505_101540.jpg', 'micro'),
-(131, 'mic04', 'Micro Sennheiser', '2023-05-08', 'bon', '4', 'Micro cravate', 'images/20230505_102025.jpg', 'micro'),
-(132, 'tre01', 'Trépied Manfrotto', '2023-05-09', 'bon', '5', 'Trépied vidéo', 'images/20230505_103315.jpg', 'trepied'),
-(133, 'tre02', 'Trépied Benro', '2023-05-10', 'bon', '3', 'Trépied photo', 'images/20230505_104109.jpg', 'trepied'),
-(134, 'tre03', 'Trépied Vanguard', '2023-05-11', 'bon', '2', 'Trépied léger', 'images/20230505_104216.jpg', 'trepied'),
-(135, 'tre04', 'Trépied Gitzo', '2023-05-12', 'bon', '1', 'Trépied carbone', 'images/20230505_104425.jpg', 'trepied'),
-(136, 'lum01', 'Lumière LED Aputure', '2023-05-13', 'bon', '4', 'Lumière portable', 'images/20230505_104558.jpg', 'lumiere'),
-(137, 'lum02', 'Lumière Godox', '2023-05-14', 'bon', '2', 'Lumière studio', 'images/20230505_104611.jpg', 'lumiere'),
-(138, 'lum03', 'Lumière Neewer', '2023-05-15', 'bon', '3', 'Lumière anneau', 'images/20230505_105255.jpg', 'lumiere'),
-(139, 'lum04', 'Lumière Yongnuo', '2023-05-16', 'bon', '2', 'Lumière RGB', 'images/20230505_105442.jpg', 'lumiere'),
-(140, 'acc01', 'Batterie Sony', '2023-05-17', 'bon', '6', 'Batterie longue durée', 'images/20230505_105700.jpg', 'accessoire'),
-(141, 'acc02', 'Carte SD Sandisk', '2023-05-18', 'bon', '10', 'Carte mémoire 64Go', 'images/20230505_105908.jpg', 'accessoire'),
-(142, 'acc03', 'Sac Lowepro', '2023-05-19', 'bon', '2', 'Sac de transport', 'images/20230505_105927.jpg', 'accessoire'),
-(143, 'acc04', 'Chargeur Canon', '2023-05-20', 'bon', '3', 'Chargeur rapide', 'images/20230505_110146.jpg', 'accessoire');
+(123, 'h4', 'camera', '0000-00-00', 'bon', '5', 'rien a dire', '../images/20230505_105927.jpg', 'camera'),
+(124, 'cam01', 'Caméra Sony', '2023-05-01', 'bon', '3', 'Caméra HD', '../images/20230505_100306.jpg', 'camera'),
+(125, 'cam02', 'Caméra Canon', '2023-05-02', 'bon', '2', 'Caméra 4K', '../images/20230505_100614.jpg', 'camera'),
+(126, 'cam03', 'Caméra Panasonic', '2023-05-03', 'bon', '4', 'Caméra compacte', '../images/20230505_100647.jpg', 'camera'),
+(127, 'cam04', 'Caméra GoPro', '2023-05-04', 'bon', '5', 'Caméra sport', '../images/20230505_100649.jpg', 'camera'),
+(128, 'mic01', 'Micro Rode', '2023-05-05', 'bon', '6', 'Microphone studio', '../images/20230505_100918.jpg', 'micro'),
+(129, 'mic02', 'Micro Shure', '2023-05-06', 'bon', '3', 'Micro dynamique', '../images/20230505_101201.jpg', 'micro'),
+(130, 'mic03', 'Micro AKG', '2023-05-07', 'bon', '2', 'Micro chant', '../images/20230505_101540.jpg', 'micro'),
+(131, 'mic04', 'Micro Sennheiser', '2023-05-08', 'bon', '4', 'Micro cravate', '../images/20230505_102025.jpg', 'micro'),
+(132, 'tre01', 'Trépied Manfrotto', '2023-05-09', 'bon', '5', 'Trépied vidéo', '../images/20230505_103315.jpg', 'trepied'),
+(133, 'tre02', 'Trépied Benro', '2023-05-10', 'bon', '3', 'Trépied photo', '../images/20230505_104109.jpg', 'trepied'),
+(134, 'tre03', 'Trépied Vanguard', '2023-05-11', 'bon', '2', 'Trépied léger', '../images/20230505_104216.jpg', 'trepied'),
+(135, 'tre04', 'Trépied Gitzo', '2023-05-12', 'bon', '1', 'Trépied carbone', '../images/20230505_104425.jpg', 'trepied'),
+(136, 'lum01', 'Lumière LED Aputure', '2023-05-13', 'bon', '4', 'Lumière portable', '../images/20230505_104558.jpg', 'lumiere'),
+(137, 'lum02', 'Lumière Godox', '2023-05-14', 'bon', '2', 'Lumière studio', '../images/20230505_104611.jpg', 'lumiere'),
+(138, 'lum03', 'Lumière Neewer', '2023-05-15', 'bon', '3', 'Lumière anneau', '../images/20230505_105255.jpg', 'lumiere'),
+(139, 'lum04', 'Lumière Yongnuo', '2023-05-16', 'bon', '2', 'Lumière RGB', '../images/20230505_105442.jpg', 'lumiere'),
+(140, 'acc01', 'Batterie Sony', '2023-05-17', 'bon', '6', 'Batterie longue durée', '../images/20230505_105700.jpg', 'accessoire'),
+(141, 'acc02', 'Carte SD Sandisk', '2023-05-18', 'bon', '10', 'Carte mémoire 64Go', '../images/20230505_105908.jpg', 'accessoire'),
+(142, 'acc03', 'Sac Lowepro', '2023-05-19', 'bon', '2', 'Sac de transport', '../images/20230505_105927.jpg', 'accessoire'),
+(143, 'acc04', 'Chargeur Canon', '2023-05-20', 'bon', '3', 'Chargeur rapide', '../images/20230505_110146.jpg', 'accessoire');
 
 -- --------------------------------------------------------
 
@@ -310,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `pseudo`, `email`, `mot_de_passe`, `adresse`, `telephone`, `role`, `etat`) VALUES
 (21, 'agent', 'agent', 'agent', 'agent@gmail.com', '$2y$10$YwP/JAstiRsjcAnetSDqtOie1003XFbaIRuzJ6USqN98WD0vUJxD6', 'adresse', 123456789, 'agent', 'valider'),
-(20, 'Tir', 'Fouard', 'professeur', 'tir@gmail.com', '$2y$10$L.p8qB9qnf2BB2KWTcp9i.eyNW3AU6voqdDLenija2pWIBDp.IF.2', 'adresse', 123456789, 'enseignant', 'valider'),
+(20, 'Tir', 'Fouard', 'professeur', 'tir@gmail.com', '$2y$10$L.p8qB9qnf2BB2KWTcp9i.eyNW3AU6voqdDLenija2pWIBDp.IF.2', 'adresse', 123456789, 'professeur', 'valider'),
 (19, 'etudiant', 'etudiant', 'etudiant', 'etudiant@gmail.com', '$2y$10$p7m..eXWt8DKEikGcMpLM.us1bVKfvxk8XeTz6Wt6LOZGikqCOh8a', 'adresse', 123456789, 'etudiant', 'valider'),
 (18, 'admin', 'admin', 'admin', 'admin@gmail.com', '$2y$10$nFnaah4syFX0wAQwBxka2uClrA18BAqkQiY6lfpRecqfaA8X1CZzW', 'adresse', 123456789, 'admin', 'valider');
 
